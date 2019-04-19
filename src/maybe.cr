@@ -16,6 +16,10 @@ module Maybe
       return !just?
     end
 
+    def inspect
+      to_s
+    end
+
     def inspect(io)
       io << to_s
     end
