@@ -1,0 +1,9 @@
+name: maybe
+version: 0.1.0
+
+authors:
+  - Yuma Fukuda <yfukuda@soum.co.jp>
+
+crystal: 0.28.0
+
+license: MIT
