@@ -6,6 +6,14 @@ module Maybe
 
     abstract def or_else(x : T)
 
+    def just?
+      return typeof(self) == Just(T)
+    end
+
+    def nothing?
+      return !just?
+    end
+
     def inspect(io)
       io << to_s
     end
