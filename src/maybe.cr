@@ -47,6 +47,10 @@ module Maybe
     def each(&block)
       yield @value
     end
+
+    def ==(other : self)
+      return other.value == @value
+    end
   end
 
   class Nothing(T) < Maybe(T)
@@ -63,6 +67,10 @@ module Maybe
     end
 
     def each(&block)
+    end
+
+    def ==(other : self)
+      return true
     end
   end
 end
