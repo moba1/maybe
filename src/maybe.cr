@@ -2,6 +2,8 @@ module Maybe
   VERSION = "0.1.0"
 
   abstract class Maybe(T)
+    include Enumerable(T)
+
     abstract def map(&block : T -> U): Maybe(U) forall U
 
     abstract def or_else(x : T)
@@ -37,6 +39,10 @@ module Maybe
     def or_else(x : T)
       self
     end
+
+    def each(&block)
+      yield @value
+    end
   end
 
   class Nothing(T) < Maybe(T)
@@ -50,6 +56,9 @@ module Maybe
 
     def or_else(x : T): Just(T)
       Just.new(x)
+    end
+
+    def each(&block)
     end
   end
 end
