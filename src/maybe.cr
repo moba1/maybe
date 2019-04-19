@@ -6,8 +6,8 @@ module Maybe
 
     abstract def or_else(x : T)
 
-    def inspect
-      to_s
+    def inspect(io)
+      io << to_s
     end
   end
 
